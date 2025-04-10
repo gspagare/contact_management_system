@@ -41,10 +41,10 @@ This project allows users to submit their contact details via a form, and the ad
 
         python -m venv venv
 
-###  Windows:
+  ###  Windows:
         venv\Scripts\activate
 
-###  Linux/Mac:
+  ###  Linux/Mac:
         source venv/bin/activate
 
 ### 3. Install Requirements
@@ -53,7 +53,7 @@ This project allows users to submit their contact details via a form, and the ad
         
 ### 4. Setup Environment Variables
 
-Create a .env file in the root directory:
+  ### Create a .env file in the root directory:
         FLASK_APP=run.py
         FLASK_ENV=development
         SECRET_KEY=your_secret_key_here
