@@ -41,10 +41,10 @@ This project allows users to submit their contact details via a form, and the ad
 
         python -m venv venv
 
-    ### Windows:
+###  Windows:
         venv\Scripts\activate
 
-    ### Linux/Mac:
+###  Linux/Mac:
         source venv/bin/activate
 
 ### 3. Install Requirements
