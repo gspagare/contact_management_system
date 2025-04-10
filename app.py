@@ -1,8 +1,8 @@
 from flask import Flask, render_template, redirect, url_for, flash, request, session
 from config import Config
-from models import db, Contact
+from models import db, Contact, User
 from forms import ContactForm, AdminLoginForm
-from flask_login import logout_user, login_required
+from flask_login import logout_user, login_required, login_user, current_user
 from flask_login import LoginManager
 import os
 
@@ -12,7 +12,7 @@ app.config.from_object(Config)
 db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)  # Correct way to initialize
-login_manager.login_view = 'login'
+login_manager.login_view = 'admin_login'
 
 
 with app.app_context():
@@ -59,6 +59,9 @@ def logout():
     flash('Logged out successfully!', 'success')
     return redirect(url_for('login'))
 
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 if __name__ == '__main__':
     app.run(debug=True)
