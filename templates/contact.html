@@ -1,13 +1,68 @@
 {% extends 'base.html' %}
-{% block title %}Contact Us{% endblock %}
+
+{% block title %}Apply - Talent Hub{% endblock %}
+
 {% block content %}
-<h2>Contact Us</h2>
-<form method="POST">
-    {{ form.hidden_tag() }}
-    {{ form.name.label }} {{ form.name() }}<br>
-    {{ form.email.label }} {{ form.email() }}<br>
-    {{ form.phone.label }} {{ form.phone() }}<br>
-    {{ form.message.label }} {{ form.message() }}<br>
-    {{ form.submit() }}
-</form>
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0">Audition Application</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" class="needs-validation" novalidate>
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3">
+                            {{ form.name.label(class="form-label") }}
+                            {{ form.name(class="form-control", placeholder="Full Name") }}
+                            <div class="invalid-feedback">
+                                Please provide your full name.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form.email.label(class="form-label") }}
+                            {{ form.email(class="form-control", placeholder="Email") }}
+                            <div class="invalid-feedback">
+                                Please provide a valid email.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3">
+                            {{ form.phone.label(class="form-label") }}
+                            {{ form.phone(class="form-control", placeholder="Phone Number") }}
+                            <div class="invalid-feedback">
+                                Please provide a valid phone number.
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form.age.label(class="form-label") }}
+                            {{ form.age(class="form-control", placeholder="Age") }}
+                            <div class="invalid-feedback">
+                                You must be at least 19 years old.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form.audition_type.label(class="form-label") }}
+                        {{ form.audition_type(class="form-select") }}
+                        <div class="invalid-feedback">
+                            Please select an audition type.
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            Submit Application
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

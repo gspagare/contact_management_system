@@ -1,11 +1,36 @@
 {% extends 'base.html' %}
-{% block title %}Admin Login{% endblock %}
+
+{% block title %}Admin Login - Talent Hub{% endblock %}
+
 {% block content %}
-<h2>Admin Login</h2>
-<form method="POST">
-    {{ form.hidden_tag() }}
-    {{ form.username.label }} {{ form.username() }}<br>
-    {{ form.password.label }} {{ form.password() }}<br>
-    {{ form.submit() }}
-</form>
+<div class="row justify-content-center">
+    <div class="col-lg-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Admin Portal</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="mb-3">
+                        {{ form.username.label(class="form-label") }}
+                        {{ form.username(class="form-control", placeholder="Username") }}
+                    </div>
+                    
+                    <div class="mb-3">
+                        {{ form.password.label(class="form-label") }}
+                        {{ form.password(class="form-control", placeholder="Password") }}
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="bi bi-box-arrow-in-right"></i> Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Talent Hub{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">TALENT HUB AUDITIONS</h1>
+    <p class="lead">Discover and nurture exceptional talent across the entertainment industry</p>
+    <hr class="my-4">
+    <p>Join our prestigious network of performers and artists</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a class="btn btn-primary btn-lg px-4 gap-3" href="{{ url_for('contact') }}" role="button">
+            <i class="bi bi-person-plus"></i> Apply Now
+        </a>
+        <a class="btn btn-outline-light btn-lg px-4" href="#about" role="button">
+            Learn More
+        </a>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Acting</h5>
+                <p class="card-text">Film, television, and theater opportunities</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Dancing</h5>
+                <p class="card-text">Contemporary, ballet, hip-hop and more</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Singing</h5>
+                <p class="card-text">Vocal performances across all genres</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
