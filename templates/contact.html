@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock %}
+{% block content %}
+<h2>Contact Us</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ form.name() }}<br>
+    {{ form.email.label }} {{ form.email() }}<br>
+    {{ form.phone.label }} {{ form.phone() }}<br>
+    {{ form.message.label }} {{ form.message() }}<br>
+    {{ form.submit() }}
+</form>
+{% endblock %}
