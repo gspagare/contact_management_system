@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Email, NumberRange, EqualTo, Length
 class AuditionForm(FlaskForm):
     name = StringField('Full Name*', validators=[DataRequired(), Length(min=2, max=100)])
     email = StringField('Email*', validators=[DataRequired(), Email()])
-    phone = StringField('Phone Number*', validators=[DataRequired(), Length(min=10, max=15)])
+    phone = StringField('Phone Number*', validators=[DataRequired(), Length(min=10, max=10)])
     audition_type = SelectField('Audition For*', 
                               choices=[('', 'Select an option'), 
                                       ('Dancing', 'Dancing'),
@@ -13,9 +13,9 @@ class AuditionForm(FlaskForm):
                                       ('Singing', 'Singing'),
                                       ('Other', 'Other')],
                               validators=[DataRequired()])
-    age = IntegerField('Age* (Must be >18)', 
+    age = IntegerField('Age* (Must be >=18)', 
                       validators=[DataRequired(), 
-                                 NumberRange(min=19, message="You must be older than 18")])
+                                 NumberRange(min=18, message="You must be above 18")])
     submit = SubmitField('Submit')
 
 class AdminForm(FlaskForm):
